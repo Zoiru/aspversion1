@@ -1,31 +1,39 @@
 @model aspversion1.Models.Product
 
-@{ ViewData["Title"] = "Add Product"; }
-
- 
+@{
+    ViewData["Title"] = "Add Product";
+}
 
 <h1>Add Product</h1>
 
 <form asp-action="Create" method="post">
 
     <div class="mb-3">
-
-        <label>Name</label>
-
+        <label asp-for="Name" class="form-label">Name</label>
         <input asp-for="Name" class="form-control" />
-
     </div>
 
     <div class="mb-3">
-
-        <label>Price</label>
-
+        <label asp-for="Price" class="form-label">Price</label>
         <input asp-for="Price" class="form-control" />
-
     </div>
 
-    <button type="submit" class="btn btn-primary">Save</button>
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label">Description</label>
+        <input asp-for="Description" class="form-control" />
+    </div>
 
-    <a asp-action="Index" class="btn btn-secondary">Back</a>
+    <div class="mb-3">
+        <label asp-for="UnitMeasure" class="form-label">Unit Measure</label>
+        <input asp-for="UnitMeasure" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        Add Product
+    </button>
+
+    <a asp-action="Index" class="btn btn-secondary">
+        Back
+    </a>
 
 </form>
